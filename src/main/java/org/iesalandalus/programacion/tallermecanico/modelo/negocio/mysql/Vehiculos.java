@@ -7,6 +7,16 @@ import org.iesalandalus.programacion.tallermecanico.modelo.negocio.IVehiculos;
 import java.util.List;
 
 public class Vehiculos implements IVehiculos {
+
+    private static Vehiculos instancia;
+    private Vehiculos conexion;
+
+    public static Vehiculos getInstancia() {
+        if (instancia == null) {
+            instancia = new Vehiculos();
+        }
+        return instancia;
+    }
     @Override
     public void comenzar() {
 

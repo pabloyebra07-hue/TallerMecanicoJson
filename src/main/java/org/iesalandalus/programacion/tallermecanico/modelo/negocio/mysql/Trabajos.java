@@ -12,9 +12,15 @@ import java.util.List;
 import java.util.Map;
 
 public class Trabajos implements ITrabajos {
-    private static Clientes instancia;
-    private Clientes conexion;
+    private static Trabajos instancia;
+    private Trabajos conexion;
 
+    public static Trabajos getInstancia() {
+        if (instancia == null) {
+            instancia = new Trabajos();
+        }
+        return instancia;
+    }
 
     @Override
     public void comenzar() {
